@@ -19,12 +19,12 @@ def http_durum():
                         with open("404.txt", "w", encoding="utf-8") as file3:
                             file3.write(i)
 
-                elif response.status_code == 500:
-                    with open("500.txt", "w", encoding="utf-8") as file4:
-                        file4.write(i)
+                    elif response.status_code == 500:
+                        with open("500.txt", "w", encoding="utf-8") as file4:
+                            file4.write(i)
 
-            except (ConnectionError and requests.exceptions.ConnectionError) as hata:
-                print("Sitelere erişilemedi..")
+                except (ConnectionError and requests.exceptions.ConnectionError) as hata:
+                    print("Sitelere erişilemedi..")
 
 
 print(""""
@@ -35,6 +35,3 @@ işlem = input ("İşlem yapmak istiyorsanız 'durum' yazınız: ")
 
 if (işlem == "durum"):
     http_durum()
-
-
-
